@@ -212,7 +212,7 @@ public class LekModController {
 
             if (sURL != null) {
                 p1.setProgress(0.01);
-                Task<Void> download = new Task<>() {
+                Task<Void> download = new Task<Void>() {
                     @Override
                     public Void call() {
                         try {
@@ -255,7 +255,7 @@ public class LekModController {
     private void unZip() {
         // once the task is done, unzip the file
 
-        Task<Void> unzip = new Task<>() {
+        Task<Void> unzip = new Task<Void>() {
             @Override
             public Void call() {
 
@@ -330,7 +330,7 @@ public class LekModController {
                 for (File lekmodDfolder : files2) {
                     // checking in lekmod which we unzipped for dlc
                     if (lekmodDfolder.isDirectory() && lekmodDfolder.getName().toLowerCase().contains("dlc")) {
-                        moveLekMod = new Task<>() {
+                        moveLekMod = new Task<Void>() {
                             @Override
                             public Void call() {
                                 try {
@@ -357,7 +357,7 @@ public class LekModController {
                 for (File file : files2) {
                     if (file.isDirectory() && file.getName().toLowerCase().contains("lekmap")) {
                         File mapsFolder = new File(fileLocation.getText() + "\\Maps");
-                        moveLekMap = new Task<>() {
+                        moveLekMap = new Task<Void>() {
                             @Override
                             public Void call() {
                                 try {

@@ -1,3 +1,4 @@
+/*
 module com.lekmod.lekinstallergui {
     requires javafx.controls;
     requires com.google.gson;
@@ -10,3 +11,5 @@ module com.lekmod.lekinstallergui {
     opens com.lekmod.lekmodinstaller to javafx.fxml;
     exports com.lekmod.lekmodinstaller;
 }
+
+ */
