@@ -12,17 +12,17 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.DirectoryChooser;
+import net.lingala.zip4j.ZipFile;
 import org.apache.commons.io.FileUtils;
 
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -215,7 +215,7 @@ public class LekModController {
                 Task<Void> download = new Task<>() {
                     @Override
                     public Void call() {
-                       /* try {
+                        try {
                             double progress = 0.01;
                             updateProgress(progress, 1);
                             URL url = new URL(sURL);
@@ -239,7 +239,6 @@ public class LekModController {
                             e.printStackTrace();
                         }
 
-                        */
                         return null;
                     }
                 };
@@ -259,17 +258,17 @@ public class LekModController {
         Task<Void> unzip = new Task<>() {
             @Override
             public Void call() {
-                            /*
-                            try {
-                                ZipFile zipFile = new ZipFile(fileLocation.getText() + "\\Lekmap.zip");
-                                zipFile.extractAll(fileLocation.getText());
-                                zipFile.close();
-                                Files.delete(Paths.get(fileLocation.getText() + "\\Lekmap.zip"));
-                            } catch (Exception ex) {
-                                ex.printStackTrace();
-                            }
 
-                             */
+                try {
+                    ZipFile zipFile = new ZipFile(fileLocation.getText() + "\\Lekmap.zip");
+                    zipFile.extractAll(fileLocation.getText());
+                    zipFile.close();
+                    Files.delete(Paths.get(fileLocation.getText() + "\\Lekmap.zip"));
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+
                 return null;
             }
         };
